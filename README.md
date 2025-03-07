@@ -65,7 +65,6 @@ HAS ( FLIGHT: one..many, TICKET: one..one external)
 ```
 
 ```
-/test_cases/
 /* Generalizations: */ 
 STAFF <= { GROUND_STAFF, CABIN_CREW} (total, exclusive) 
 ```
