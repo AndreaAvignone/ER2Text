@@ -23,15 +23,15 @@ Below is a summary of the test cases included in this repository:
 | Test 2    | Library loan management                                                   |
 | Test 3    | Boat rental                                                               |
 | Test 4    | Management of radiological examinations                                   |
-| Test 5v1  | Server management                                                         |
-| Test 5v2  | Database for managing a cluster of servers                                |
-| Test 6    | Collection of information about territorial control performed by officers |
-| Test 7    | Online newspaper publisher                                                |
-| Test 8    | Kitchen appliance stores                                                  |
-| Test 9    | Museum restoration                                                        |
-| Test 10   | Management of a free-floating e-scooter sharing rental company            |
-| Test 11   | Online services such as movie rental, online music, and video games       |
-| Test 12   | Airline company management                                                |
+| Test 5  | Server management                                                         |
+| Test 6  | Database for managing a cluster of servers                                |
+| Test 7    | Collection of information about territorial control performed by officers |
+| Test 8    | Online newspaper publisher                                                |
+| Test 9    | Kitchen appliance stores                                                  |
+| Test 10   | Museum restoration                                                        |
+| Test 11   | Management of a free-floating e-scooter sharing rental company            |
+| Test 12   | Online services such as movie rental, online music, and video games       |
+| Test 13   | Airline company management                                                |
 
 ## Structure of the Repository
 
