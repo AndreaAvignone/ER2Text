@@ -1,0 +1,11 @@
+MEMBER { Num_card (id), Name, Surname, Phone, Licence (optional)}
+RENTAL { Date (external), Cost}
+BOAT { ConstructionYear, CodB (id)}
+WITH_CABIN { optionals (multi)}
+MANUFACTURER { MName, CodM (id), Address}
+/* Relationships: */
+DO ( MEMBER: zero..many, RENTAL: one..one)
+OF ( BOAT: zero..many, RENTAL: one..one external)
+PRODUCED ( MANUFACTURER: one..many, BOAT: one..one)
+/* Generalizations: */ 
+BOAT <= { WITH_CABIN} (partial, exclusive)

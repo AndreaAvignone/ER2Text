@@ -1,0 +1,13 @@
+USER { UCode (id), Nickname, Email, Facebook_page (optional)}
+SUPPORTER { Sponsorship_fee}
+MULTIMEDIA_CONTENT { MCCode (external), Name, Description, Keywords (multi)}
+AUDIO { Duration}
+PICTURE { Format}
+VIDEO { Duration, Resolution}
+TIME { Date (id)}
+/* Relationships: */
+PROVIDE ( USER: zero..many, MULTIMEDIA_CONTENT: one..one external)
+CONNECT ( USER: zero..many, TIME: one..many) { Minutes}
+/* Generalizations: */ 
+USER <= { SUPPORTER} (partial, exclusive)
+MULTIMEDIA_CONTENT <= { AUDIO, PICTURE, VIDEO} (total, exclusive)

@@ -1,0 +1,17 @@
+PATIENT { SSN (id), Name, Surname, DateOfBirth, PhoneNumber}
+EXAM { Date (external), StartTime (external), Symptoms (optional, multi), Status}
+SCANNER { SID (id), Software_update (optional), Vendor}
+STAFF { StaffID (id), Name, Surname}
+TECHNICIAN { Qualifications (optional, multi)}
+RADIOLOGIST { YearsExperience}
+ENGINEER
+REFRESHER_COURSE { CourseID (id), Title, NumberCredits, Topics (multi)}
+TIME { Date (id)}
+/* Relationships: */
+FOR ( PATIENT: zero..many, EXAM: one..one external)
+ON ( SCANNER: zero..many, EXAM: one..one)
+PERFORMS ( TECHNICIAN: zero..many, EXAM: one..one)
+TAKES ( REFRESHER_COURSE: one..many, RADIOLOGIST: zero..many) { Date, Evaluation}
+DO CALIBRATION ( SCANNER: zero..many, TIME: one..many, ENGINEER: zero..many) { StartTime, EndTime, Result}
+/* Generalizations: */ 
+STAFF <= { RADIOLOGIST, TECHNICIAN, ENGINEER} (total, exclusive)

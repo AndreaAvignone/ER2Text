@@ -1,0 +1,15 @@
+ADMINISTRATOR { Name, Surname, CodeA (id), Phone (multi)}
+SERVER { IP, PurchaseDate, CodeS (id), Brand}
+CPU { NumCPUs, RAM}
+GPU { NumGPUs, VRAM}
+REPORT { Timestamp (external), Description}
+TIME { StartDate (id), StartTime (id)}
+USER { Email, Phone (optional), CodeU (id)}
+PERMISSION { Code (id), Description}
+/* Relationships: */
+MANAGES (ADMINISTRATOR: zero..many, REPORT: one..one)
+USES (GPU: zero..many, TIME: one..many, USER: zero..many) { EndDate, Cost, EndTime}
+PERFORMS (USER: zero..many, REPORT: one..one external)
+HAS (PERMISSION: one..many, ADMINISTRATOR: one..many) { Reason}
+/* Generalizations: */ 
+SERVER <= {CPU, GPU} (total, overlapping)

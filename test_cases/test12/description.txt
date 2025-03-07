@@ -1,0 +1,7 @@
+You are requested to design database for the management of a company specializing in online services such as movie rental, online music, video games. 
+
+Each service is identified by a unique code and is characterized by its name and a textual description. The company offers packages for each service. Each package is uniquely identified by a progressive number within the reference service and is characterized by a name, the monthly subscription cost and a description of the contractual conditions. For each service, the company can offer multiple packages.  
+
+Users of the services are characterized by their tax code, name, surname and telephone number. For business users, the VAT number and company name are also stored. 
+
+It is requested to keep track of all the subscriptions that have been taken out over time by users for the different packages.  For each subscription, the user, the package, and the subscription period (start date and end date) are stored. Assume that the same user can subscribe to several packages, even at the same time. 

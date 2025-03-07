@@ -1,0 +1,15 @@
+RESTORATION_OPERATION { CodR (id), Nome}
+TIME1 { DataI (id)}
+RECOMPOSITION { Tools (multi)}
+CONSOLIDATION
+TIME2 { DateR (id)}
+ARTWORK { Number (id), Author (id), Year, Quotation}
+MATERIAL { CodM (id), Name, Description}
+SUPPLIER { VAT (id), Phone, Email (optional)}
+/* Relationships: */
+COST ( RESTORATION_OPERATION: one..many, TIME1: one..many) { Price, ODate (optional)}
+DO PERFORM ( RESTORATION_OPERATION: zero..many, TIME2: one..many, ARTWORK: zero..many) { DataF (optional)}
+USE ( CONSOLIDATION: one..one, MATERIAL: zero..many)
+SUPPLY ( MATERIAL: one..many, SUPPLIER: one..many) { SDate}
+/* Generalizations: */ 
+RESTORATION_OPERATION <= { CONSOLIDATION, RECOMPOSITION} (total, exclusive)

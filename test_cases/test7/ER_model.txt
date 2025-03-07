@@ -1,0 +1,7 @@
+OFFICER { PID (id), Surname, Name, BirthDate, email, Tel (multi)}
+AREA { CodC (external), BoundingBox { TopX, BottomX, TopY, BottomY }}
+CITY { IdC (id), Population, Name}
+TIME { StartDate (id), StarTime (id)}
+/* Relationships: */
+DO_CONTROL ( TIME: one..many, OFFICER: one..many, AREA: zero..many) { EndDate (optional), EndTime (optional)}
+BELONG ( AREA: one..one external, CITY: one..many)

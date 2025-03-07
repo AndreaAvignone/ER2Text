@@ -1,0 +1,10 @@
+SERVICE { SID (id), Name, Description} 
+USER { TaxID (id), Name, Surname, Email} 
+BUSINESS { VAT, CompanyName} 
+TIME { StartDate (id)} 
+PACKAGE { Number (external), Name, TermsConditions, MonthlyCost} 
+/* Relationships: */
+HAS ( SERVICE: one..many, PACKAGE: one..one external) 
+SUBSCRIPTION ( TIME: one..many, USER: zero..many, PACKAGE: zero..many) { EndDate} 
+/* Generalizations: */ 
+USER <= { BUSINESS} (partial, exclusive)

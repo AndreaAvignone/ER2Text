@@ -1,0 +1,6 @@
+We want to create a database for a chain of kitchen appliance stores.
+The stores are identified by a unique code, and their address is known, described by street, house number, and city, along with a phone number.
+The kitchen appliances are identified by a unique code, and their brand, model name, and selling price are known. For refrigerators, the volume of the freezer and refrigerator compartments is known, while for cooktops, the type (e.g., gas or induction) and the number of burners are known.
+To make purchases, store customers must register with the store chain. Each customer is characterized by SSN, name, surname, and optionally an email address.
+Employees at the stores are identified by their employee number, and their name, surname, and hiring date are known. We want to keep track of each employee's work shifts. Work shifts are characterized by date, start time, and end time. Each employee can work only one shift per day, and this shift is carried out at only one store.
+Customers make purchases at the stores. Each purchase is characterized by the customer, the purchase timestamp, the store where it was made, and the list of appliances, along with their quantities, that were purchased. It is assumed that a customer cannot make multiple purchases at the same time.
