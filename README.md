@@ -104,6 +104,7 @@ This work is currently under review for publication. If you use this code or the
   howpublished = {\url{https://github.com/AndreaAvignone/ER2Text.git}},
   note = {Work under review}
 }
+```
 
 ## License
 
