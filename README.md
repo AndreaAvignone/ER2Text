@@ -57,7 +57,7 @@ Example structure:
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/your-repository/er-model-to-text.git](https://github.com/AndreaAvignone/ER2Text.git)
+   git clone https://github.com/AndreaAvignone/ER2Text.git
    ```
 2. Navigate to the test cases folder:
    ```bash
