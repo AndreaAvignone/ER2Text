@@ -89,6 +89,22 @@ We welcome contributions! To contribute:
 2. Add new test cases following the existing structure.
 3. Submit a pull request with a clear description of your changes.
 
+
+## Citation
+
+This work is currently under review for publication. If you use this code or the ideas presented in this repository, please temporarily cite it as follows:
+
+```bibtex
+@misc{ER2Text_2025,
+  author = {Andrea Avignone, Alessia Tierno, Alessandro Fiori, Silvia Chiusano},
+  title = {ER2Text},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/AndreaAvignone/ER2Text.git}},
+  note = {Work under review}
+}
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
