@@ -61,7 +61,7 @@ Example structure:
    ```
 2. Navigate to the test cases folder:
    ```bash
-   cd er-model-to-text/test_cases/
+   cd ER2Text/test_cases/
    ```
 3. Open a specific test case folder to view its ER model and description.
 
