@@ -53,6 +53,23 @@ Example structure:
     ...
 ```
 
+Each ER_model.txt contains the comment for specific structures (e.g., Relationships, Generalizations) to support the reader and optionally provide a hint for the LLM.
+
+```
+/* Relationships: */
+FROM ( AIRPORT: one..many, FLIGHT: one..one) 
+TO ( FLIGHT: one..one, AIRPORT: one..many) 
+OF ( GROUND_STAFF: one..many, SHIFT: one..one external) 
+AT ( AIRPORT: one..many, SHIFT: one..one) 
+HAS ( FLIGHT: one..many, TICKET: one..one external) 
+```
+
+```
+/test_cases/
+/* Generalizations: */ 
+STAFF <= { GROUND_STAFF, CABIN_CREW} (total, exclusive) 
+```
+
 ## How to Use
 
 1. Clone this repository:
