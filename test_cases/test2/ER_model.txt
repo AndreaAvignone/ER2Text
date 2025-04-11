@@ -1,11 +1,11 @@
 PERSON { Num_card (id), Name, Surname, Phone, Facebook_page (optional), Email}
-CONSULTATION { Date (external), Wear}
+CONSULTATION { Date (external id), Wear}
 BOOK { Title, ISBN (id), Chapters (multi)}
 SERIES_BOOK { SeriesName, BookNumber}
 AUTHOR { Name, CodA (id), Surname, Pseudonym (optional)}
-/* Relationships: */
+/* Relationships */
 PERFORM ( PERSON: zero..many, CONSULTATION: one..one)
-OF ( BOOK: zero..many, CONSULTATION: one..one external)
+OF ( BOOK: zero..many, CONSULTATION: one..one external id)
 AUTHOR_OF ( AUTHOR: one..many, BOOK: one..many)
-/* Generalizations: */ 
+/* Generalizations */ 
 BOOK <= { SERIES_BOOK} (partial, exclusive)
