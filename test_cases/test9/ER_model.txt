@@ -4,11 +4,11 @@ EMPLOYEE { CodeE (id), Name, Surname, HiringDate}
 APPLIANCE { CodeA (id), Model, Brand, SellingPrice}
 REFRIGERATOR { RefrigeratorVolume, FreezerVolume}
 COOKTOP { CooktopType, NumberBurners}
-SHIFT { Date (external), StartTime, EndTime}
+SHIFT { Date (external id), StartTime, EndTime}
 CUSTOMER { Email (optional), Name, CodeC (id), Surname}
 /* Relationships: */
 BELONGS_TO (RETAIL_STORE: zero..many, PURCHASE: one..one)
-PERFORMS (EMPLOYEE: zero..many, SHIFT: one..one external)
+PERFORMS (EMPLOYEE: zero..many, SHIFT: one..one external id)
 HANDLED_BY (EMPLOYEE: zero..many, PURCHASE: one..one)
 LOCATED_AT (SHIFT: one..one, RETAIL_STORE: zero..many)
 FOR (PURCHASE: one..one, CUSTOMER: zero..many)
