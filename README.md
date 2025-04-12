@@ -5,6 +5,8 @@ This repository contains test cases for evaluating the transformation of ER (Ent
 - A textual representation of the ER diagram
 - The corresponding textual description of the ER model
 
+**Disclaimer:** The test cases and examples provided in this repository are entirely fictional and have been created solely for research and educational purposes. Any resemblance to real persons, organizations, or data is purely coincidental. This project is intended for academic or demonstration use only and is not suitable for production environments or real-world decision making. The authors assume no responsibility or liability for any misuse of the code, data, or concepts presented herein.
+
 ## Table of Contents
 
 - [Test Cases](#test-cases)
