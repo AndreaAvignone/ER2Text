@@ -1,0 +1,9 @@
+E_SCOOTER { ESCode (id), Model, Purchase_date, geo_position { Lat, Long }}
+USER { UCode (id), Name, Surname, BirthDate, Credit_Card}
+MEMBERSHIP_FEE { MFCode (id), Name, Description, Requirements (multi), Amount}
+TIME1 { Date (id)}
+TIME2 { Date (id)}
+/* Relationships: */
+PAY ( MEMBERSHIP_FEE: zero..many, USER: one..one)
+DO RENTED ( E_SCOOTER: zero..many, TIME1: one..many, USER: zero..many)
+OUT_OF_ORDER ( E_SCOOTER: zero..many, TIME2: one..many) { Description}

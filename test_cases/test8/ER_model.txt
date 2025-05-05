@@ -1,0 +1,14 @@
+MEMBER { Email (id), Surname, Telephone (optional), Name}
+TIME { Initial_Date (id)}
+NEWSPAPER { Fondation_year, CodN (id), NewsPaperName}
+VOLUME { Year, Num_Vol, Month}
+ARTICLE { Title, CodA (external id), Num_pages, Authors (multi)}
+PAID_ARTICLES { Price}
+FREE_ACCCESS { Type}
+/* Relationships: */
+IS_PART_OF ( MEMBER: one..many, TIME: one..many, NEWSPAPER: one..many ) { Final_Date, Role}
+OF ( VOLUME: one..one external, NEWSPAPER: zero..many )
+EDITS ( MEMBER: zero..many, VOLUME: one..one )
+IN ( VOLUME: zero..many, ARTICLE: one..one external id)
+/* Generalizations: */ 
+ARTICLE <= { FREE_ACCCESS, PAID_ARTICLES } (total, exclusive)

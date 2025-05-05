@@ -1,0 +1,11 @@
+You are requested to database for an airline company. 
+Airports are identified by the IATA code and characterized by the name and the place in which it is located (city and country). 
+
+Flights are identified by a unique code and the date on which the flight is operated. Each flight is also characterized by the departure and arrival airport, the time of departure and the duration of the flight. 
+
+You want to keep track of the available tickets for each flight. Within each flight, each ticket is identified by a unique seat number, and is characterized by class and cost. 
+
+The company's staff is divided into cabin crew and ground staff. The staff is identified by a serial number; Name, surname, telephone number and the list of languages spoken are also known. 
+
+For the cabin crew, the qualification is known (Flight Assist, Assistant Manager, Captain, etc.). 
+For ground staff, it is required to keep track of all work shifts carried out, memorizing the date on which the shift was carried out, in which time slot (start time and end time) and at which airport. Please note that ground staff can only work one shift on the same date. 

@@ -1,0 +1,15 @@
+STAFF { ID (id), Name, Surname, Phone, Spoken_languages (multi) } 
+GROUND_STAFF 
+CABIN_CREW { Qualification } 
+TICKET { Seat (external id), Cost, Class} 
+AIRPORT { IATA (id),  Location { City, Nation}, Name} 
+FLIGHT { ID (id), DepTime, Duration, DepDate (id)} 
+SHIFT { Date (external id), StartTime, EndTime} 
+/* Relationships: */
+FROM ( AIRPORT: one..many, FLIGHT: one..one) 
+TO ( FLIGHT: one..one, AIRPORT: one..many) 
+OF ( GROUND_STAFF: one..many, SHIFT: one..one external id) 
+AT ( AIRPORT: one..many, SHIFT: one..one) 
+HAS ( FLIGHT: one..many, TICKET: one..one external id) 
+/* Generalizations: */ 
+STAFF <= { GROUND_STAFF, CABIN_CREW} (total, exclusive) 

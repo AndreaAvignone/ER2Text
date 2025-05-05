@@ -1,0 +1,41 @@
+/* Entities */
+STAFF { StaffID (id), StaffName, StaffSurname, StaffEmail }
+TEACHER
+ADMINISTRATIVE_STAFF { JobType }
+TECHNICAL_STAFF
+DEPARTMENT { DeptID (id), DeptName, DeptPhoneNumber }
+POSITION {PositionID (id), PositionName, Description }
+DISCIPLINARY_AREA { AreaID (id), Subjects (multi), AreaName }
+COURSE { CourseID (id), CourseName, Credits, Degree }
+LECTURE { Date (external id), StartTime (external id), EndTime }
+THEORY { Topics (multi) }
+PRACTISE { Tools (multi) }
+ROOM { RID (id), Seats, Location}
+LABORATORY { LabID (id), NumComputerStations }
+STUDENT { StudentID (id), StudentName, StudentSurname, StudentEmail (multi), Residence {Address, City, Country} }
+STUDENT_TEAM { TeamID (id), TeamName }
+TIME2 { StartDate (id) }
+COMPETITION { CompetitionID (id), CompetitionName }
+TIME1 { Date (id) }
+EXAM_ROUND { ExamDate (external id), ExamHour (external id), ExamDuration }
+HOMEWORK { HomeworkTitle (external id), Points, Deadline }
+
+/*Relationships*/
+HAS (TEACHER: zero..many, POSITION: zero..many ) {StartDateRole, EndDateRole (optional)}
+SCHEDULING (LECTURE: one..one external id, COURSE: one..many)
+MEMBERSHIP (DISCIPLINARY_AREA: zero..many, COURSE: one..one)
+TAKE (EXAM_ROUND: one..many, STUDENT: zero..many)
+ATTENDANCE (COURSE: zero..many, STUDENT: zero..many)
+FOR (COURSE: zero..many, EXAM_ROUND: one..one external id)
+ASSIGNMENT (TEACHER: zero..many, COURSE: zero..many ) 
+WORKING_IN (STAFF: one..one, DEPARTMENT: one..many)
+IN (HOMEWORK: one..one external, COURSE: zero..many )
+DELIVERY (HOMEWORK: zero..many, STUDENT: zero..many) 
+IN_ROOM (ROOM: zero..many, THEORY: one..one)
+IN_LAB (PRACTISE: one..one, LABORATORY: zero..many)
+INVOLVEMENT (STUDENT: zero..many, STUDENT_TEAM: zero..many, TIME2: one..many) { EndDate (optional) }
+PARTICIPATION (STUDENT_TEAM: zero..many, COMPETITION: zero..many, TIME1: one..many) {PositionInRanking}
+
+/*Generalizations*/
+STAFF <= {ADMINISTRATIVE_STAFF, TEACHER, TECHNICAL_STAFF} (total, exclusive)
+LECTURE <= {PRACTISE, THEORY} (total, exclusive)
